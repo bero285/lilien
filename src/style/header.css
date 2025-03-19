@@ -1,0 +1,138 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.header-edge {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.header-edge a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+}
+
+.header-logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+}
+.header-mobile-logo {
+  display: none;
+}
+.header-contact {
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #dcdcdc;
+}
+.social-media-row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.burger-menu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+
+.mobile-header {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header-desktop-logo {
+    display: none;
+  }
+  .header-mobile-logo {
+    display: block;
+    width: 50px;
+    height: 50px;
+  }
+  .burger-menu {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f8f9fa;
+    z-index: 1000;
+    padding: 0;
+    justify-content: space-between;
+  }
+
+  .mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .nav-links.active .header-edge {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 30px;
+  }
+
+  .nav-links.active .header-edge a {
+    font-size: 24px;
+  }
+
+  .nav-links.active .social-links {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
+  .social-media-row {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+  }
+
+  .social-media-row a {
+    font-size: 24px;
+  }
+
+  .header-contact {
+    font-size: 20px;
+    padding: 12px 24px;
+  }
+}
