@@ -1,0 +1,139 @@
+.home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.home-main {
+  width: 100%;
+  position: relative;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.home-banner-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  z-index: 1;
+  gap: 10px;
+}
+.home-banner-text h2 {
+  font-size: 64px;
+  font-family: Nato-regular;
+  text-align: center;
+}
+.home-banner-text h3 {
+  font-size: 24px;
+  font-family: Nato-light;
+  text-align: center;
+}
+.home-experience {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  justify-content: flex-end;
+}
+.home-experience-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  width: 40%;
+}
+.home-experience-left h2 {
+  font-size: 44px;
+  font-family: Nato-regular;
+}
+.home-experience-left h4 {
+  font-size: 20px;
+  font-family: Nato-light;
+}
+.home-experience img {
+  width: 50%;
+  height: 700px;
+  object-fit: cover;
+}
+.nav-button {
+  border: 1px solid black;
+  padding: 10px 15px;
+  width: fit-content;
+  color: black;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 8px;
+  font-size: 20px;
+  font-family: Nato-regular;
+}
+.nav-button:hover {
+  background-color: black;
+  color: white;
+}
+.offer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 50px;
+}
+.offer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 80px;
+  width: 80%;
+}
+.we-offer {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.we-offer h2 {
+  font-size: 28px;
+  font-family: Nato-regular;
+}
+.offer img {
+  width: 40%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .home-main {
+    height: 50vh;
+  }
+  .home-banner-text {
+    width: 100%;
+    padding-inline: 20px;
+  }
+  .home-experience {
+    flex-direction: column-reverse;
+    padding-inline: 30px;
+  }
+  .home-experience-left {
+    width: 100%;
+  }
+  .home-experience img {
+    width: 100%;
+    height: 200px;
+  }
+  .offer-container {
+    flex-direction: column;
+    width: 100%;
+    padding-inline: 30px;
+  }
+
+  .offer img {
+    width: 100%;
+    height: 200px;
+  }
+}

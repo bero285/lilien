@@ -48,13 +48,13 @@ export default function Header() {
         <div className="header-edge social-links">
           <div className="social-media-row">
             <a href="/about">
-              <FaFacebookF />
+              <FaFacebookF size={20} />
             </a>
             <a href="/about">
-              <FaInstagram />
+              <FaInstagram size={20} />
             </a>
             <a href="/about">
-              <FaLinkedinIn />
+              <FaLinkedinIn size={20} />
             </a>
           </div>
           <a href="/contact" className="header-contact">

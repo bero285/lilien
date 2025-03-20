@@ -1,0 +1,42 @@
+/* Dropdown Container */
+.dropDown {
+  border-bottom: 2px solid #5a5353;
+  padding: 10px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.dropDownHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: Nato-regular;
+  font-weight: bold;
+  color: #333;
+  padding: 10px;
+}
+
+.chevronIcon {
+  transition: transform 0.3s ease;
+  width: 20px;
+  height: 20px;
+}
+
+.chevronIcon.rotate {
+  transform: rotate(180deg);
+}
+
+.dropDownContent {
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+  padding: 0 15px;
+}
+
+.dropDownContent p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+  font-family: Nato-light;
+}

@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  padding: 15px 50px;
   background-color: #f8f9fa;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -19,14 +19,15 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 20px;
+  gap: 40px;
   padding: 20px 0;
 }
 
 .header-edge a {
   text-decoration: none;
   color: #000;
-  font-size: 18px;
+  font-size: 20px;
+  font-family: Nato-light;
 }
 
 .header-logo {
@@ -38,14 +39,19 @@
   display: none;
 }
 .header-contact {
-  padding: 8px;
+  padding: 10px 20px;
   border-radius: 5px;
   background-color: #dcdcdc;
 }
 .social-media-row {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 40px;
+}
+.social-media-row a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .burger-menu {
   display: none;

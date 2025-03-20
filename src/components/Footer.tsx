@@ -1,43 +1,37 @@
 import Logo from "../assets/logo.jpg";
-import "../style/header.css";
+import "../style/footer.css";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <div className="header">
-      <img src={Logo} className="header-logo header-mobile-logo" alt="Logo" />
-
-      <div className={`nav-links`}>
-        <div className="header-edge">
+    <div className="footer">
+      <div className={`footer-links`}>
+        <div className="footer-edge footer-nav">
           <a href="/">Home</a>
           <a href="/about">About</a>
           <a href="/services">Services</a>
           <a href="/portfolio">Portfolio</a>
         </div>
 
-        <img
-          src={Logo}
-          className="header-logo header-desktop-logo"
-          alt="Logo"
-        />
+        <img src={Logo} className="footer-logo" alt="Logo" />
 
-        <div className="header-edge social-links">
-          <div className="social-media-row">
+        <div className="footer-edge">
+          <a href="/contact" className="footer-contact">
+            Book a Consultation
+          </a>
+          <div className="footer-social-media-row">
             <a href="/about">
-              <FaFacebookF />
+              <FaFacebookF size={20} />
             </a>
             <a href="/about">
-              <FaInstagram />
+              <FaInstagram size={20} />
             </a>
             <a href="/about">
-              <FaLinkedinIn />
+              <FaLinkedinIn size={20} />
             </a>
           </div>
-          <a href="/contact" className="header-contact">
-            Contact Us
-          </a>
         </div>
       </div>
     </div>
