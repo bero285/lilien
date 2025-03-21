@@ -5,14 +5,17 @@ import { FaInstagram } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const location = useLocation();
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-
+  const getLinkClassName = (path: any) => {
+    return location.pathname === path ? "active" : "";
+  };
   return (
     <div className="header">
       <img src={Logo} className="header-logo header-mobile-logo" alt="Logo" />
@@ -33,10 +36,18 @@ export default function Header() {
         )}
 
         <div className="header-edge">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/services">Services</a>
-          <a href="/portfolio">Portfolio</a>
+          <a href="/" className={`${getLinkClassName("/")}`}>
+            Home
+          </a>
+          <a href="/about" className={`${getLinkClassName("/about")}`}>
+            About
+          </a>
+          <a href="/services" className={`${getLinkClassName("/services")}`}>
+            Services
+          </a>
+          <a href="/portfolio" className={`${getLinkClassName("/portfolio")}`}>
+            Portfolio
+          </a>
         </div>
 
         <img
@@ -57,7 +68,7 @@ export default function Header() {
               <FaLinkedinIn size={20} />
             </a>
           </div>
-          <a href="/contact" className="header-contact">
+          <a href="/contact" className="header-contact global-contact">
             Contact Us
           </a>
         </div>

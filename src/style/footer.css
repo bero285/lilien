@@ -39,10 +39,9 @@
 }
 
 .footer-contact {
-  padding: 12px 20px;
-  border-radius: 5px;
-  background-color: #dcdcdc;
+  padding: 12px 24px;
 }
+
 .footer-social-media-row {
   display: flex;
   flex-direction: row;

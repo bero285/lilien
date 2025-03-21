@@ -1,0 +1,67 @@
+/* home spotlight card */
+.spotlight-card {
+  width: 100%;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.spotlight-card img {
+  width: 100%;
+  object-fit: cover;
+  max-height: 400px;
+}
+.spotlight-card a {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  background-color: #dcdcdc;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-top: -10px;
+}
+
+.global-contact {
+  background-color: #66b2b2;
+  color: white !important;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: Nato-light;
+}
+.global-contact:hover {
+  background-color: #539393;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-image-container {
+    width: 100%;
+  }
+
+  .contact-card {
+    position: static;
+    transform: none;
+    width: 90%;
+    margin: -60px auto 0;
+  }
+
+  .contact-title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .spotlight-card img {
+    max-height: 200px;
+  }
+  .spotlight-card a {
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+    background-color: #dcdcdc;
+    padding: 8px 10px;
+    border-radius: 8px;
+    margin-top: -10px;
+  }
+}

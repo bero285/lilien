@@ -4,6 +4,8 @@ import OfferImage from "../assets/weoffer.jpg";
 import "../style/home.css";
 import DropDown from "../components/DropDown";
 import { useState } from "react";
+import SpotlightCard from "../components/SpotlightCard";
+import ContactUs from "../components/ContactUs";
 export default function Home() {
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
   const handleToggle = (index: number) => {
@@ -42,6 +44,7 @@ export default function Home() {
         </div>
         <img src={AboutImage} />
       </div>
+
       <div className="offer">
         <div className="offer-container">
           <img src={OfferImage} />
@@ -77,6 +80,15 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <div className="spotlight">
+        <h2>In the Spotlight</h2>
+        <div className="spotlight-container">
+          <SpotlightCard image={OfferImage} link="#" />
+          <SpotlightCard image={OfferImage} link="#" />
+        </div>
+      </div>
+      <ContactUs />
     </div>
   );
 }

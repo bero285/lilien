@@ -18,7 +18,7 @@ export default function Footer() {
         <img src={Logo} className="footer-logo" alt="Logo" />
 
         <div className="footer-edge">
-          <a href="/contact" className="footer-contact">
+          <a href="/contact" className="footer-contact global-contact">
             Book a Consultation
           </a>
           <div className="footer-social-media-row">

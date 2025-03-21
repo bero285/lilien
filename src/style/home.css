@@ -107,6 +107,28 @@
   height: 100%;
   object-fit: cover;
 }
+
+/* spotlight section  */
+
+.spotlight {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 30px;
+  margin-top: 50px;
+}
+.spotlight h2 {
+  margin-left: 50px;
+  font-size: 42px;
+  font-family: Nato-regular;
+}
+.spotlight-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  box-sizing: border-box;
+}
 @media (max-width: 768px) {
   .home-main {
     height: 50vh;
@@ -135,5 +157,11 @@
   .offer img {
     width: 100%;
     height: 200px;
+  }
+
+  .spotlight-container {
+    flex-direction: column;
+    gap: 30px;
+    padding-inline: 15px;
   }
 }
