@@ -54,7 +54,7 @@ export function Home() {
               Curated Event Experiences
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Celebrating over a decade of service, Chappelow Events is a
+              Celebrating over a decade of service, Lilien Decor is a
               boutique event planning and design company that specializes in
               nonprofit fundraising, conferences, and annual celebrations.
               <br />
