@@ -1,29 +1,41 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
-
+import Logo from "../../logo.jpg";
 export default function Footer() {
   return (
     <footer className="bg-gray-50 py-16 mt-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-12">
           <div className="flex flex-col md:flex-row gap-8 items-center">
-            <Link to="/" className="text-lg hover:text-gray-600 transition-colors underline">
+            <Link
+              to="/"
+              className="text-lg hover:text-gray-600 transition-colors underline"
+            >
               Home
             </Link>
-            <Link to="/about" className="text-lg hover:text-gray-600 transition-colors underline">
+            <Link
+              to="/about"
+              className="text-lg hover:text-gray-600 transition-colors underline"
+            >
               About
             </Link>
-            <Link to="/services" className="text-lg hover:text-gray-600 transition-colors underline">
+            <Link
+              to="/services"
+              className="text-lg hover:text-gray-600 transition-colors underline"
+            >
               Services
             </Link>
-            <Link to="/portfolio" className="text-lg hover:text-gray-600 transition-colors underline">
+            <Link
+              to="/portfolio"
+              className="text-lg hover:text-gray-600 transition-colors underline"
+            >
               Portfolio
             </Link>
           </div>
 
           <Link to="/" className="flex-shrink-0">
             <img
-              src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80"
+              src={Logo}
               alt="Logo"
               className="h-16 w-16 rounded-lg object-cover"
             />

@@ -2,11 +2,11 @@ import { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { Menu, X, Facebook, Instagram, Linkedin, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import Logo from "../../logo.jpg";
 const languages = [
   { code: "en", name: "English" },
   { code: "es", name: "Español" },
-  { code: "fr", name: "Français" }
+  { code: "fr", name: "Français" },
 ];
 
 export default function Header() {
@@ -45,13 +45,21 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between h-20">
           {/* Mobile menu button */}
-          <button
-            className="md:hidden p-2 rounded-md hover:bg-gray-100"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-
+          <div className="flex flex-row justify-between w-full md:hidden">
+            <Link to="/" className="flex-shrink-0">
+              <img
+                src={Logo}
+                alt="Logo"
+                className="h-12 w-12 rounded-lg object-cover"
+              />
+            </Link>
+            <button
+              className="md:hidden p-2 rounded-md hover:bg-gray-100"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+          </div>
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center justify-between w-full gap-8">
             <div className="flex gap-8">
@@ -72,7 +80,7 @@ export default function Header() {
             {/* Logo in center */}
             <Link to="/" className="flex-shrink-0">
               <img
-                src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80"
+                src={Logo}
                 alt="Logo"
                 className="h-12 w-12 rounded-lg object-cover"
               />
@@ -148,7 +156,7 @@ export default function Header() {
                 <div className="flex flex-col h-full p-8">
                   <div className="flex justify-between items-center">
                     <img
-                      src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80"
+                      src={Logo}
                       alt="Logo"
                       className="h-12 w-12 rounded-lg object-cover"
                     />
@@ -226,13 +234,22 @@ export default function Header() {
                   </div>
                   <div className="mt-auto">
                     <div className="flex justify-center gap-8 mb-8">
-                      <a href="#" className="hover:text-gray-600 transition-colors">
+                      <a
+                        href="#"
+                        className="hover:text-gray-600 transition-colors"
+                      >
                         <Facebook className="w-6 h-6" />
                       </a>
-                      <a href="#" className="hover:text-gray-600 transition-colors">
+                      <a
+                        href="#"
+                        className="hover:text-gray-600 transition-colors"
+                      >
                         <Instagram className="w-6 h-6" />
                       </a>
-                      <a href="#" className="hover:text-gray-600 transition-colors">
+                      <a
+                        href="#"
+                        className="hover:text-gray-600 transition-colors"
+                      >
                         <Linkedin className="w-6 h-6" />
                       </a>
                     </div>

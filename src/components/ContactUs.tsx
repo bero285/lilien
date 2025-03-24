@@ -27,10 +27,11 @@ export default function ContactUs() {
           >
             <h2 className="text-5xl font-serif">Let's Toast</h2>
             <p className="text-xl text-gray-600">
-              Ready to create something extraordinary? Let's discuss your vision and bring it to life.
+              Ready to create something extraordinary? Let's discuss your vision
+              and bring it to life.
             </p>
             <a
-              href="#"
+              href="/contact"
               className="inline-block px-8 py-3 bg-[#66b2b2] text-white text-lg font-medium rounded-md transition-colors hover:bg-[#539393]"
             >
               Schedule a Consultation

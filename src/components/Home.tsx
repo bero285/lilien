@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 import DropDown from "./DropDown";
 import SpotlightCard from "./SpotlightCard";
 import ContactUs from "./ContactUs";
@@ -16,22 +15,25 @@ export function Home() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ 
-            backgroundImage: 'url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80")',
-            backgroundPosition: 'center 30%'
+          style={{
+            backgroundImage:
+              'url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80")',
+            backgroundPosition: "center 30%",
           }}
         >
           <div className="absolute inset-0 bg-black/30" />
         </div>
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="relative text-center text-white px-4 max-w-4xl mx-auto"
         >
-          <h1 className="text-6xl md:text-7xl font-serif mb-6">Planning with Heart</h1>
+          <h1 className="text-6xl md:text-7xl font-serif mb-6">
+            Planning with Heart
+          </h1>
           <p className="text-xl md:text-2xl font-light">
             Woman-owned Event Planning Company Serving Kansas City and Beyond
           </p>
@@ -41,25 +43,28 @@ export function Home() {
       {/* Experience Section */}
       <section className="py-24 px-4 md:px-8 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h2 className="text-4xl md:text-5xl font-serif">Curated Event Experiences</h2>
+            <h2 className="text-4xl md:text-5xl font-serif">
+              Curated Event Experiences
+            </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Celebrating over a decade of service, Chappelow Events is a boutique
-              event planning and design company that specializes in nonprofit
-              fundraising, conferences, and annual celebrations.
-              <br /><br />
+              Celebrating over a decade of service, Chappelow Events is a
+              boutique event planning and design company that specializes in
+              nonprofit fundraising, conferences, and annual celebrations.
+              <br />
+              <br />
               We are inspired by our clients' mission, values, and goals to
               create memorable experiences and cultivate lasting impressions and
               impact. From spreadsheets to illustrated activations, let us help
               share your vision and build your dream event.
             </p>
-            <a 
+            <a
               href="/about"
               className="inline-block px-8 py-3 border-2 border-black text-lg font-medium transition-colors hover:bg-black hover:text-white rounded-md"
             >
@@ -73,7 +78,7 @@ export function Home() {
             viewport={{ once: true }}
             className="relative h-[600px] rounded-lg overflow-hidden"
           >
-            <img 
+            <img
               src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80"
               alt="Event Experience"
               className="absolute inset-0 w-full h-full object-cover"
@@ -93,14 +98,14 @@ export function Home() {
               viewport={{ once: true }}
               className="relative h-[500px] rounded-lg overflow-hidden"
             >
-              <img 
+              <img
                 src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80"
                 alt="What we offer"
                 className="absolute inset-0 w-full h-full object-cover"
               />
             </motion.div>
             <div className="space-y-8">
-              <motion.h2 
+              <motion.h2
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.6 }}
@@ -135,7 +140,7 @@ export function Home() {
                   onToggle={() => handleToggle(3)}
                 />
               </div>
-              <a 
+              <a
                 href="/services"
                 className="inline-block px-8 py-3 border-2 border-black text-lg font-medium transition-colors hover:bg-black hover:text-white rounded-md"
               >
@@ -149,7 +154,7 @@ export function Home() {
       {/* Spotlight Section */}
       <section className="py-24 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -159,17 +164,17 @@ export function Home() {
             In the Spotlight
           </motion.h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <SpotlightCard 
+            <SpotlightCard
               image="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80"
               title="Summer Gala 2023"
               description="An enchanting evening under the stars"
-              link="#"
+              link="/portfolio#gallery-1-1"
             />
-            <SpotlightCard 
+            <SpotlightCard
               image="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&q=80"
               title="Tech Conference 2023"
               description="Bringing innovation to life"
-              link="#"
+              link="/portfolio#gallery-2-1"
             />
           </div>
         </div>
