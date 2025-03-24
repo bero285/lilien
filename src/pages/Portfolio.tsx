@@ -61,9 +61,10 @@ export default function Portfolio() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
       >
         <h1 className="text-4xl md:text-5xl font-serif text-center mb-16">
           Our Portfolio
@@ -73,8 +74,8 @@ export default function Portfolio() {
           {portfolioItems.map((item, index) => (
             <motion.div
               key={item.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group cursor-pointer"
             >

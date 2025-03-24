@@ -7,7 +7,8 @@ import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 import "./index.css";
-
+import { I18nextProvider } from "react-i18next";
+import i18nProvider from "./i18n/i18n";
 const MainLayout = () => {
   return (
     <div className="min-h-screen flex flex-col">
@@ -35,7 +36,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <I18nextProvider i18n={i18nProvider}>
+      <RouterProvider router={router} />
+    </I18nextProvider>
+  );
 }
 
 export default App;

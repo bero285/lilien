@@ -3,18 +3,20 @@ import { useLocation, Link } from "react-router-dom";
 import { Menu, X, Facebook, Instagram, Linkedin, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from "../../logo.jpg";
+import { useTranslation } from "react-i18next";
 const languages = [
-  { code: "en", name: "English" },
-  { code: "es", name: "Español" },
-  { code: "fr", name: "Français" },
+  { code: "en", name: "EN" },
+  { code: "ge", name: "KA" },
 ];
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState(languages[0]);
+  const { i18n, t } = useTranslation();
+  const [currentLanguage, setCurrentLanguage] = useState(
+    languages.find((lang: any) => lang.code === i18n.language) || languages[0]
+  );
   const location = useLocation();
-
   const getLinkClassName = (path: string) => {
     return `text-lg font-light transition-colors hover:text-gray-600 ${
       location.pathname === path ? "underline" : ""
@@ -39,13 +41,17 @@ export default function Header() {
       },
     },
   };
-
+  const changeLanguage = async (language: any) => {
+    i18n.changeLanguage(language.code);
+    setCurrentLanguage(language);
+    localStorage.setItem("language", language.code);
+  };
   return (
     <header className="bg-gray-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between h-20">
           {/* Mobile menu button */}
-          <div className="flex flex-row justify-between w-full md:hidden">
+          <div className="flex flex-row justify-between w-full lg:hidden">
             <Link to="/" className="flex-shrink-0">
               <img
                 src={Logo}
@@ -54,26 +60,26 @@ export default function Header() {
               />
             </Link>
             <button
-              className="md:hidden p-2 rounded-md hover:bg-gray-100"
+              className="lg:hidden p-2 rounded-md hover:bg-gray-100"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               <Menu className="w-6 h-6" />
             </button>
           </div>
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center justify-between w-full gap-8">
+          <div className="hidden lg:flex items-center justify-between w-full gap-8">
             <div className="flex gap-8">
               <Link to="/" className={getLinkClassName("/")}>
-                Home
+                {t("header.home")}
               </Link>
               <Link to="/about" className={getLinkClassName("/about")}>
-                About
+                {t("header.about")}
               </Link>
               <Link to="/services" className={getLinkClassName("/services")}>
-                Services
+                {t("header.services")}
               </Link>
               <Link to="/portfolio" className={getLinkClassName("/portfolio")}>
-                Portfolio
+                {t("header.portfolio")}
               </Link>
             </div>
 
@@ -109,7 +115,7 @@ export default function Header() {
                           <button
                             key={lang.code}
                             onClick={() => {
-                              setCurrentLanguage(lang);
+                              changeLanguage(lang);
                               setIsLanguageOpen(false);
                             }}
                             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -151,7 +157,7 @@ export default function Header() {
                 animate="open"
                 exit="closed"
                 variants={menuVariants}
-                className="fixed inset-0 bg-white z-50 md:hidden"
+                className="fixed inset-0 bg-white z-50 lg:hidden"
               >
                 <div className="flex flex-col h-full p-8">
                   <div className="flex justify-between items-center">
@@ -173,28 +179,28 @@ export default function Header() {
                       className="text-2xl"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      Home
+                      {t("header.home")}
                     </Link>
                     <Link
                       to="/about"
                       className="text-2xl"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      About
+                      {t("header.about")}
                     </Link>
                     <Link
                       to="/services"
                       className="text-2xl"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      Services
+                      {t("header.services")}
                     </Link>
                     <Link
                       to="/portfolio"
                       className="text-2xl"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      Portfolio
+                      {t("header.portfolio")}
                     </Link>
                     {/* Mobile Language Switcher */}
                     <div className="relative">
@@ -218,7 +224,7 @@ export default function Header() {
                                 <button
                                   key={lang.code}
                                   onClick={() => {
-                                    setCurrentLanguage(lang);
+                                    changeLanguage(lang);
                                     setIsLanguageOpen(false);
                                   }}
                                   className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -258,7 +264,7 @@ export default function Header() {
                       className="block w-full bg-[#66b2b2] text-white text-center px-6 py-3 rounded-md hover:bg-[#539393] transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      Contact Us
+                      {t("header.contact")}
                     </Link>
                   </div>
                 </div>
