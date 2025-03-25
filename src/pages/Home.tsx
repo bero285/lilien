@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import DropDown from "./DropDown";
-import SpotlightCard from "./SpotlightCard";
-import ContactUs from "./ContactUs";
+import DropDown from "../components/DropDown";
+import SpotlightCard from "../components/SpotlightCard";
+import ContactUs from "../components/ContactUs";
 
 export function Home() {
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
@@ -26,9 +26,9 @@ export function Home() {
           <div className="absolute inset-0 bg-black/30" />
         </div>
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           className="relative text-center text-white px-4 max-w-4xl mx-auto"
         >
           <h1 className="text-6xl md:text-7xl font-serif mb-6">
@@ -44,7 +44,7 @@ export function Home() {
       <section className="py-24 px-4 md:px-8 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -10 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
@@ -54,9 +54,9 @@ export function Home() {
               Curated Event Experiences
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Celebrating over a decade of service, Lilien Decor is a
-              boutique event planning and design company that specializes in
-              nonprofit fundraising, conferences, and annual celebrations.
+              Celebrating over a decade of service, Lilien Decor is a boutique
+              event planning and design company that specializes in nonprofit
+              fundraising, conferences, and annual celebrations.
               <br />
               <br />
               We are inspired by our clients' mission, values, and goals to
@@ -72,7 +72,7 @@ export function Home() {
             </a>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 10 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
@@ -92,7 +92,7 @@ export function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
@@ -102,6 +102,7 @@ export function Home() {
                 src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80"
                 alt="What we offer"
                 className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
               />
             </motion.div>
             <div className="space-y-8">
@@ -155,7 +156,7 @@ export function Home() {
       <section className="py-24 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}

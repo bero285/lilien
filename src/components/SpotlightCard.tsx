@@ -7,10 +7,15 @@ interface SpotlightCardProps {
   link: string;
 }
 
-export default function SpotlightCard({ image, title, description, link }: SpotlightCardProps) {
+export default function SpotlightCard({
+  image,
+  title,
+  description,
+  link,
+}: SpotlightCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
@@ -21,6 +26,7 @@ export default function SpotlightCard({ image, title, description, link }: Spotl
           src={image}
           alt={title}
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
         />
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">

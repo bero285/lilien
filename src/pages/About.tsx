@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="prose prose-lg max-w-none"
@@ -33,6 +33,7 @@ export default function About() {
               src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80"
               alt="Event Planning"
               className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
             />
           </div>
         </div>

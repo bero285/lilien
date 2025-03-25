@@ -38,6 +38,7 @@ export default function Footer() {
               src={Logo}
               alt="Logo"
               className="h-16 w-16 rounded-lg object-cover"
+              loading="lazy"
             />
           </Link>
 

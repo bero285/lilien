@@ -85,6 +85,7 @@ export default function Portfolio() {
                     src={item.thumbnail}
                     alt={item.title}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
                   />
                   {item.images.slice(1).map((image, index) => (
                     <a
