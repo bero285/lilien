@@ -11,6 +11,12 @@ export function Home() {
     setOpenDropdown(openDropdown === index ? null : index);
   };
 
+  const fadeInUp = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.5, ease: "easeOut" },
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -26,7 +32,7 @@ export function Home() {
           <div className="absolute inset-0 bg-black/30" />
         </div>
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="relative text-center text-white px-4 max-w-4xl mx-auto"
@@ -44,11 +50,10 @@ export function Home() {
       <section className="py-24 px-4 md:px-8 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -10 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="space-y-6"
+            {...fadeInUp}
+            viewport={{ once: true, amount: 0.3 }}
+            whileInView="animate"
+            className="space-y-6 order-2 md:order-1"
           >
             <h2 className="text-4xl md:text-5xl font-serif">
               Curated Event Experiences
@@ -72,11 +77,10 @@ export function Home() {
             </a>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 10 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="relative h-[600px] rounded-lg overflow-hidden"
+            {...fadeInUp}
+            viewport={{ once: true, amount: 0.3 }}
+            whileInView="animate"
+            className="relative h-[400px] md:h-[600px] rounded-lg overflow-hidden order-1 md:order-2"
           >
             <img
               src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80"
@@ -92,11 +96,10 @@ export function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="relative h-[500px] rounded-lg overflow-hidden"
+              {...fadeInUp}
+              viewport={{ once: true, amount: 0.3 }}
+              whileInView="animate"
+              className="relative h-[300px] md:h-[500px] rounded-lg overflow-hidden"
             >
               <img
                 src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80"
@@ -107,10 +110,9 @@ export function Home() {
             </motion.div>
             <div className="space-y-8">
               <motion.h2
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
+                {...fadeInUp}
+                viewport={{ once: true, amount: 0.3 }}
+                whileInView="animate"
                 className="text-4xl font-serif"
               >
                 What we bring to the table...
@@ -156,10 +158,9 @@ export function Home() {
       <section className="py-24 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.h2
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            {...fadeInUp}
+            viewport={{ once: true, amount: 0.3 }}
+            whileInView="animate"
             className="text-4xl font-serif mb-12"
           >
             In the Spotlight
@@ -169,13 +170,13 @@ export function Home() {
               image="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80"
               title="Summer Gala 2023"
               description="An enchanting evening under the stars"
-              link="/portfolio#gallery-1-1"
+              link="/gallery/1"
             />
             <SpotlightCard
               image="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&q=80"
               title="Tech Conference 2023"
               description="Bringing innovation to life"
-              link="/portfolio#gallery-2-1"
+              link="/gallery/2"
             />
           </div>
         </div>
@@ -185,3 +186,5 @@ export function Home() {
     </div>
   );
 }
+
+export default Home;

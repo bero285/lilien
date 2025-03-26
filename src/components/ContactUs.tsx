@@ -6,11 +6,11 @@ export default function ContactUs() {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -10 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="relative h-[500px] rounded-lg overflow-hidden"
+            className="relative h-[300px] md:h-[500px] rounded-lg overflow-hidden"
           >
             <img
               src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&q=80"
@@ -20,8 +20,8 @@ export default function ContactUs() {
             />
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 10 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="text-center md:text-left space-y-6"

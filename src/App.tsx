@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import "./index.css";
 import { I18nextProvider } from "react-i18next";
 import i18nProvider from "./i18n/i18n";
+import Gallery from "./pages/Gallery";
 const MainLayout = () => {
   return (
     <div className="min-h-screen flex flex-col">
@@ -30,6 +31,7 @@ const router = createBrowserRouter([
       { path: "/about", element: <About /> },
       { path: "/services", element: <Services /> },
       { path: "/portfolio", element: <Portfolio /> },
+      { path: "/gallery/:id", element: <Gallery /> },
       { path: "/contact", element: <Contact /> },
     ],
   },

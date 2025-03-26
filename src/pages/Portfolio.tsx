@@ -1,63 +1,8 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { Fancybox } from "@fancyapps/ui";
-import "@fancyapps/ui/dist/fancybox/fancybox.css";
-
-const portfolioItems = [
-  {
-    id: 1,
-    title: "Summer Gala 2023",
-    thumbnail:
-      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80",
-    ],
-  },
-  {
-    id: 2,
-    title: "Tech Conference 2023",
-    thumbnail:
-      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80",
-    ],
-  },
-  {
-    id: 3,
-    title: "Wedding Reception",
-    thumbnail:
-      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80",
-    ],
-  },
-  {
-    id: 4,
-    title: "Charity Fundraiser",
-    thumbnail:
-      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80",
-    ],
-  },
-];
+import portfolioItems from "../data";
+import { NavLink } from "react-router-dom";
 
 export default function Portfolio() {
-  useEffect(() => {
-    Fancybox.bind("[data-fancybox]", {});
-
-    return () => {
-      Fancybox.destroy();
-    };
-  }, []);
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <motion.div
@@ -79,7 +24,7 @@ export default function Portfolio() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group cursor-pointer"
             >
-              <a href={item.images[0]} data-fancybox={`gallery-${item.id}`}>
+              <NavLink to={`/gallery/${item.id}`}>
                 <div className="relative overflow-hidden rounded-lg aspect-[16/9]">
                   <img
                     src={item.thumbnail}
@@ -87,21 +32,13 @@ export default function Portfolio() {
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     loading="lazy"
                   />
-                  {item.images.slice(1).map((image, index) => (
-                    <a
-                      key={index}
-                      href={image}
-                      data-fancybox={`gallery-${item.id}`}
-                      className="hidden"
-                    />
-                  ))}
                   <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <span className="text-white text-xl font-medium">
                       {item.title}
                     </span>
                   </div>
                 </div>
-              </a>
+              </NavLink>
             </motion.div>
           ))}
         </div>
