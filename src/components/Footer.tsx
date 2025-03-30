@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Logo from "../../logo.jpg";
+import { useTranslation } from "react-i18next";
 export default function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="bg-gray-50 py-16 mt-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -11,25 +13,25 @@ export default function Footer() {
               to="/"
               className="text-lg hover:text-gray-600 transition-colors underline"
             >
-              Home
+              {t("header.home")}
             </Link>
             <Link
               to="/about"
               className="text-lg hover:text-gray-600 transition-colors underline"
             >
-              About
+              {t("header.about")}
             </Link>
             <Link
               to="/services"
               className="text-lg hover:text-gray-600 transition-colors underline"
             >
-              Services
+              {t("header.services")}
             </Link>
             <Link
               to="/portfolio"
               className="text-lg hover:text-gray-600 transition-colors underline"
             >
-              Portfolio
+              {t("header.portfolio")}
             </Link>
           </div>
 
@@ -47,7 +49,7 @@ export default function Footer() {
               to="/contact"
               className="bg-[#66b2b2] text-white px-6 py-2 rounded-md hover:bg-[#539393] transition-colors order-2 lg:order-1"
             >
-              Book a Consultation
+              {t("header.schedule")}
             </Link>
             <div className="flex gap-6 order-1 lg:order-2">
               <a href="#" className="hover:text-gray-600 transition-colors">

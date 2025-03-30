@@ -20,7 +20,7 @@ export function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[60vh] sm:h-[80vh] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -38,7 +38,8 @@ export function Home() {
           className="relative text-center text-white px-4 max-w-4xl mx-auto"
         >
           <h1 className="text-6xl md:text-7xl font-serif mb-6">
-            Planning with Heart
+            {/* Planning with Heart */}
+            Lilien Events and Decor
           </h1>
           <p className="text-xl md:text-2xl font-light">
             Woman-owned Event Planning Company Serving Kansas City and Beyond
@@ -80,7 +81,7 @@ export function Home() {
             {...fadeInUp}
             viewport={{ once: true, amount: 0.3 }}
             whileInView="animate"
-            className="relative h-[400px] md:h-[600px] rounded-lg overflow-hidden order-1 md:order-2"
+            className="relative h-[300px] md:h-[600px] rounded-lg overflow-hidden order-1 md:order-2"
           >
             <img
               src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80"

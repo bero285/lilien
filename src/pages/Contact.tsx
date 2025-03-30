@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 interface FormData {
   firstName: string;
@@ -10,6 +11,7 @@ interface FormData {
 }
 
 export default function Contact() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
@@ -24,9 +26,11 @@ export default function Contact() {
     console.log(formData);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
@@ -37,16 +41,21 @@ export default function Contact() {
         transition={{ duration: 0.6 }}
         className="max-w-3xl mx-auto"
       >
-        <h1 className="text-4xl md:text-5xl font-serif text-center mb-6">Contact Us</h1>
+        <h1 className="text-4xl md:text-5xl font-serif text-center mb-6">
+          {t("contact.title")}
+        </h1>
         <p className="text-xl text-gray-600 text-center mb-12">
-          Ready to create something extraordinary? Let's discuss your vision.
+          {t("contact.subtitle")}
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
-                First Name *
+              <label
+                htmlFor="firstName"
+                className="block text-sm font-medium text-gray-700 mb-1"
+              >
+                {t("contact.name")} *
               </label>
               <input
                 type="text"
@@ -59,8 +68,11 @@ export default function Contact() {
               />
             </div>
             <div>
-              <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
-                Last Name *
+              <label
+                htmlFor="lastName"
+                className="block text-sm font-medium text-gray-700 mb-1"
+              >
+                {t("contact.lastname")} *
               </label>
               <input
                 type="text"
@@ -75,8 +87,11 @@ export default function Contact() {
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-              Email *
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
+              {t("contact.email")} *
             </label>
             <input
               type="email"
@@ -90,8 +105,11 @@ export default function Contact() {
           </div>
 
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-              Phone Number
+            <label
+              htmlFor="phone"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
+              {t("contact.phone")}
             </label>
             <input
               type="tel"
@@ -104,8 +122,11 @@ export default function Contact() {
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-              Message *
+            <label
+              htmlFor="message"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
+              {t("contact.message")} *
             </label>
             <textarea
               id="message"
@@ -123,7 +144,7 @@ export default function Contact() {
               type="submit"
               className="bg-[#66b2b2] text-white px-8 py-3 rounded-md hover:bg-[#539393] transition-colors"
             >
-              Send Message
+              {t("contact.button")}
             </button>
           </div>
         </form>

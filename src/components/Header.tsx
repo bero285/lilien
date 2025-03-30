@@ -67,8 +67,8 @@ export default function Header() {
             </button>
           </div>
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center justify-between w-full gap-8">
-            <div className="flex gap-8">
+          <div className="hidden lg:flex items-center justify-between w-full gap-4">
+            <div className="flex gap-8 w-[420px]">
               <Link to="/" className={getLinkClassName("/")}>
                 {t("header.home")}
               </Link>
@@ -92,7 +92,7 @@ export default function Header() {
               />
             </Link>
 
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-8 w-[420px] justify-end">
               {/* Language Switcher */}
               <div className="relative">
                 <button
@@ -144,7 +144,7 @@ export default function Header() {
                 to="/contact"
                 className="bg-[#66b2b2] text-white px-6 py-2 rounded-md hover:bg-[#539393] transition-colors"
               >
-                Contact Us
+                {t("header.contact")}
               </Link>
             </div>
           </div>

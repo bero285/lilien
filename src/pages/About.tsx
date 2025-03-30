@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function About() {
+  const { t } = useTranslation();
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <motion.div
@@ -10,7 +12,7 @@ export default function About() {
         className="prose prose-lg max-w-none"
       >
         <h1 className="text-4xl md:text-5xl font-serif mb-8">
-          About Lilien Decor
+          {t("about.title")}
         </h1>
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
