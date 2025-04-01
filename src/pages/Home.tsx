@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 import DropDown from "../components/DropDown";
 import SpotlightCard from "../components/SpotlightCard";
 import ContactUs from "../components/ContactUs";
+import { useTranslation } from "react-i18next";
 
 export function Home() {
+  const { t } = useTranslation();
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
 
   const handleToggle = (index: number) => {
@@ -29,7 +31,7 @@ export function Home() {
             backgroundPosition: "center 30%",
           }}
         >
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-black/50" />
         </div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -41,8 +43,9 @@ export function Home() {
             {/* Planning with Heart */}
             Lilien Events and Decor
           </h1>
-          <p className="text-xl md:text-2xl font-light">
-            Woman-owned Event Planning Company Serving Kansas City and Beyond
+          <p className="text-xl md:text-2xl font-light font-serif">
+            {/* Woman-owned Event Planning Company Serving Kansas City and Beyond */}
+            {t("home.subtitle")}
           </p>
         </motion.div>
       </section>
@@ -57,24 +60,19 @@ export function Home() {
             className="space-y-6 order-2 md:order-1"
           >
             <h2 className="text-4xl md:text-5xl font-serif">
-              Curated Event Experiences
+              {t("home.aboutTitle")}
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Celebrating over a decade of service, Lilien Decor is a boutique
-              event planning and design company that specializes in nonprofit
-              fundraising, conferences, and annual celebrations.
+              {t("home.aboutOne")}
               <br />
               <br />
-              We are inspired by our clients' mission, values, and goals to
-              create memorable experiences and cultivate lasting impressions and
-              impact. From spreadsheets to illustrated activations, let us help
-              share your vision and build your dream event.
+              {t("home.aboutTwo")}
             </p>
             <a
               href="/about"
               className="inline-block px-8 py-3 border-2 border-black text-lg font-medium transition-colors hover:bg-black hover:text-white rounded-md"
             >
-              About Us
+              {t("home.aboutUsButton")}
             </a>
           </motion.div>
           <motion.div
@@ -116,30 +114,30 @@ export function Home() {
                 whileInView="animate"
                 className="text-4xl font-serif"
               >
-                What we bring to the table...
+                {t("home.serviceTitle")}
               </motion.h2>
               <div className="space-y-4">
                 <DropDown
-                  title="Planning"
-                  text="With over a decade of experience, leave the spreadsheets, budget management, vendor outreach, mobile bidding software, and onsite event management to us."
+                  title={t("home.weddingTitle")}
+                  text={t("home.weddingSubtitle")}
                   isOpen={openDropdown === 0}
                   onToggle={() => handleToggle(0)}
                 />
                 <DropDown
-                  title="Design"
-                  text="From event storyboarding to marketing, our team will design your dream event from the ground up."
+                  title={t("home.birthdayTitle")}
+                  text={t("home.birthdaySubtitle")}
                   isOpen={openDropdown === 1}
                   onToggle={() => handleToggle(1)}
                 />
                 <DropDown
-                  title="Production"
-                  text="Stage management is our forte. Working with our preferred production partners, we will ensure that every light, sound, and moment is perfectly on cue!"
+                  title={t("home.corporateTitle")}
+                  text={t("home.corporateSubtitle")}
                   isOpen={openDropdown === 2}
                   onToggle={() => handleToggle(2)}
                 />
                 <DropDown
-                  title="Fulfillment"
-                  text="You bring the sponsors and we'll handle the rest! If you want to ensure full engagement of sponsors at your event and you want them to keep coming back year after year, lean on our fulfillment services to keep those VIPs happy!"
+                  title={t("home.purhsetTitle")}
+                  text={t("home.purshetSubtitle")}
                   isOpen={openDropdown === 3}
                   onToggle={() => handleToggle(3)}
                 />
@@ -148,7 +146,7 @@ export function Home() {
                 href="/services"
                 className="inline-block px-8 py-3 border-2 border-black text-lg font-medium transition-colors hover:bg-black hover:text-white rounded-md"
               >
-                Learn More
+                {t("home.serviceButton")}
               </a>
             </div>
           </div>
@@ -164,7 +162,7 @@ export function Home() {
             whileInView="animate"
             className="text-4xl font-serif mb-12"
           >
-            In the Spotlight
+            {t("home.portfolio")}
           </motion.h2>
           <div className="grid md:grid-cols-2 gap-8">
             <SpotlightCard
